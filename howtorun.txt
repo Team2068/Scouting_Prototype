@@ -1,0 +1,3 @@
+To start the server, type node server.js in the terminal.
+
+All form data collected goes into data.json.
