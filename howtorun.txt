@@ -1,3 +1,5 @@
 To start the server, type node server.js in the terminal.
 
 All form data collected goes into data.json.
+
+To get the ip address of the website run checkip.py and use that ip + the port (the port should be 3000)
