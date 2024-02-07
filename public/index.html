@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="scoutIcon.png">
+  <title>2068 Scouting</title>
+  <style>
+    @keyframes gradientCycle {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #00072D;
+      background-size: 200% 200%;
+      animation: gradientCycle 25s infinite;
+    }
+
+    .glassmorphic-container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      width: 400px;
+      text-align: center;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .glassmorphic-input {
+      width: 380px;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      color: white;
+      resize: none;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .glassmorphic-submit {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #ffc800;
+      color: #050A27;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .glassmorphic-submit:hover {
+      background: #bf9a13;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="glassmorphic-container">
+    <h2>Team 2068 Scouting</h2>
+    <form id="robotForm" action="/submit-form" method="POST">
+      <label for="teamName">Team Name:</label>
+      <input type="text" id="teamName" name="teamName" class="glassmorphic-input" required>
+
+      <label for="teamNumber">Team Number:</label>
+      <input type="text" id="teamNumber" name="teamNumber" class="glassmorphic-input" required>
+
+      <label for="winLossRatio">Win/Loss Ratio:</label>
+      <input type="text" id="winLossRatio" name="winLossRatio" class="glassmorphic-input" required>
+
+      <label for="robotDescription">Robot Description:</label>
+      <textarea id="robotDescription" name="robotDescription" class="glassmorphic-input" rows="4" required></textarea>
+
+      <button type="button" onclick="submitForm()" class="glassmorphic-submit">Submit</button>
+    </form>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
